@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Api::V1::Accounts::CredentialsController < Api::BaseController
-  before_action -> { doorkeeper_authorize! :read, :'read:accounts' }, except: [:update]
+  before_action -> { doorkeeper_authorize! :profile, :read, :'read:accounts' }, except: [:update]
   before_action -> { doorkeeper_authorize! :write, :'write:accounts' }, only: [:update]
   before_action :require_user!
 
@@ -33,6 +33,7 @@ class Api::V1::Accounts::CredentialsController < Api::BaseController
       :discoverable,
       :hide_collections,
       :indexable,
+      attribution_domains: [],
       fields_attributes: [:name, :value]
     )
   end

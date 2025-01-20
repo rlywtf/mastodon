@@ -5,18 +5,14 @@ import { connect } from 'react-redux';
 
 import { changeComposing, mountCompose, unmountCompose } from 'mastodon/actions/compose';
 import ServerBanner from 'mastodon/components/server_banner';
+import { Search } from 'mastodon/features/compose/components/search';
 import ComposeFormContainer from 'mastodon/features/compose/containers/compose_form_container';
-import SearchContainer from 'mastodon/features/compose/containers/search_container';
-
-import LinkFooter from './link_footer';
+import { LinkFooter } from 'mastodon/features/ui/components/link_footer';
+import { identityContextPropShape, withIdentity } from 'mastodon/identity_context';
 
 class ComposePanel extends PureComponent {
-
-  static contextTypes = {
-    identity: PropTypes.object.isRequired,
-  };
-
   static propTypes = {
+    identity: identityContextPropShape,
     dispatch: PropTypes.func.isRequired,
   };
 
@@ -41,11 +37,11 @@ class ComposePanel extends PureComponent {
   }
 
   render() {
-    const { signedIn } = this.context.identity;
+    const { signedIn } = this.props.identity;
 
     return (
       <div className='compose-panel' onFocus={this.onFocus}>
-        <SearchContainer openInRoute />
+        <Search openInRoute />
 
         {!signedIn && (
           <>
@@ -65,4 +61,4 @@ class ComposePanel extends PureComponent {
 
 }
 
-export default connect()(ComposePanel);
+export default connect()(withIdentity(ComposePanel));

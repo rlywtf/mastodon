@@ -13,12 +13,12 @@ import { connect } from 'react-redux';
 import ChevronRightIcon from '@/material-icons/400-24px/chevron_right.svg?react';
 import ExpandMoreIcon from '@/material-icons/400-24px/expand_more.svg?react';
 import { fetchServer, fetchExtendedDescription, fetchDomainBlocks  } from 'mastodon/actions/server';
+import { Account } from 'mastodon/components/account';
 import Column from 'mastodon/components/column';
 import { Icon  }  from 'mastodon/components/icon';
 import { ServerHeroImage } from 'mastodon/components/server_hero_image';
 import { Skeleton } from 'mastodon/components/skeleton';
-import Account from 'mastodon/containers/account_container';
-import LinkFooter from 'mastodon/features/ui/components/link_footer';
+import { LinkFooter} from 'mastodon/features/ui/components/link_footer';
 
 const messages = defineMessages({
   title: { id: 'column.about', defaultMessage: 'About' },
@@ -123,7 +123,7 @@ class About extends PureComponent {
           <div className='about__header'>
             <ServerHeroImage blurhash={server.getIn(['thumbnail', 'blurhash'])} src={server.getIn(['thumbnail', 'url'])} srcSet={server.getIn(['thumbnail', 'versions'])?.map((value, key) => `${value} ${key.replace('@', '')}`).join(', ')} className='about__header__hero' />
             <h1>{isLoading ? <Skeleton width='10ch' /> : server.get('domain')}</h1>
-            <p><FormattedMessage id='about.powered_by' defaultMessage='Decentralized social media powered by {mastodon}' values={{ mastodon: <a href='https://joinmastodon.org' className='about__mail' target='_blank'>Mastodon</a> }} /></p>
+            <p><FormattedMessage id='about.powered_by' defaultMessage='Decentralized social media powered by {mastodon}' values={{ mastodon: <a href='https://joinmastodon.org' className='about__mail' target='_blank' rel='noopener'>Mastodon</a> }} /></p>
           </div>
 
           <div className='about__meta'>
@@ -170,7 +170,8 @@ class About extends PureComponent {
               <ol className='rules-list'>
                 {server.get('rules').map(rule => (
                   <li key={rule.get('id')}>
-                    <span className='rules-list__text'>{rule.get('text')}</span>
+                    <div className='rules-list__text'>{rule.get('text')}</div>
+                    {rule.get('hint').length > 0 && (<div className='rules-list__hint'>{rule.get('hint')}</div>)}
                   </li>
                 ))}
               </ol>
@@ -188,18 +189,20 @@ class About extends PureComponent {
               <>
                 <p><FormattedMessage id='about.domain_blocks.preamble' defaultMessage='Mastodon generally allows you to view content from and interact with users from any other server in the fediverse. These are the exceptions that have been made on this particular server.' /></p>
 
-                <div className='about__domain-blocks'>
-                  {domainBlocks.get('items').map(block => (
-                    <div className='about__domain-blocks__domain' key={block.get('domain')}>
-                      <div className='about__domain-blocks__domain__header'>
-                        <h6><span title={`SHA-256: ${block.get('digest')}`}>{block.get('domain')}</span></h6>
-                        <span className='about__domain-blocks__domain__type' title={intl.formatMessage(severityMessages[block.get('severity')].explanation)}>{intl.formatMessage(severityMessages[block.get('severity')].title)}</span>
-                      </div>
+                {domainBlocks.get('items').size > 0 && (
+                  <div className='about__domain-blocks'>
+                    {domainBlocks.get('items').map(block => (
+                      <div className='about__domain-blocks__domain' key={block.get('domain')}>
+                        <div className='about__domain-blocks__domain__header'>
+                          <h6><span title={`SHA-256: ${block.get('digest')}`}>{block.get('domain')}</span></h6>
+                          <span className='about__domain-blocks__domain__type' title={intl.formatMessage(severityMessages[block.get('severity')].explanation)}>{intl.formatMessage(severityMessages[block.get('severity')].title)}</span>
+                        </div>
 
-                      <p>{(block.get('comment') || '').length > 0 ? block.get('comment') : <FormattedMessage id='about.domain_blocks.no_reason_available' defaultMessage='Reason not available' />}</p>
-                    </div>
-                  ))}
-                </div>
+                        <p>{(block.get('comment') || '').length > 0 ? block.get('comment') : <FormattedMessage id='about.domain_blocks.no_reason_available' defaultMessage='Reason not available' />}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </>
             ) : (
               <p><FormattedMessage id='about.not_available' defaultMessage='This information has not been made available on this server.' /></p>

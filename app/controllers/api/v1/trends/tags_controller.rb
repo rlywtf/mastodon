@@ -27,15 +27,9 @@ class Api::V1::Trends::TagsController < Api::BaseController
   end
 
   def tags_from_trends
-    Trends.tags.query.allowed
-  end
-
-  def insert_pagination_headers
-    set_pagination_headers(next_path, prev_path)
-  end
-
-  def pagination_params(core_params)
-    params.slice(:limit).permit(:limit).merge(core_params)
+    scope = Trends.tags.query.allowed.in_locale(content_locale)
+    scope = scope.filtered_for(current_account) if user_signed_in?
+    scope
   end
 
   def next_path

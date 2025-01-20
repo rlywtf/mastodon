@@ -27,10 +27,6 @@ module User::HasSettings
     settings['default_sensitive']
   end
 
-  def setting_unfollow_modal
-    settings['web.unfollow_modal']
-  end
-
   def setting_boost_modal
     settings['web.reblog_modal']
   end
@@ -45,6 +41,10 @@ module User::HasSettings
 
   def setting_system_font_ui
     settings['web.use_system_font']
+  end
+
+  def setting_system_scrollbars_ui
+    settings['web.use_system_scrollbars']
   end
 
   def setting_noindex
@@ -93,6 +93,10 @@ module User::HasSettings
 
   def setting_disable_swiping
     settings['web.disable_swiping']
+  end
+
+  def setting_disable_hover_cards
+    settings['web.disable_hover_cards']
   end
 
   def setting_always_send_emails

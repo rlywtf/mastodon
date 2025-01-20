@@ -14,6 +14,7 @@ ca:
       last_attempt: Tens un intent més abans no es bloqui el teu compte.
       locked: El teu compte s'ha blocat.
       not_found_in_database: "%{authentication_keys} o contrasenya no són vàlids."
+      omniauth_user_creation_failure: S'ha produït un error en crear un compte per a aquesta identitat.
       pending: El teu compte encara està en revisió.
       timeout: La teva sessió ha expirat. Torna a iniciar-la per a continuar.
       unauthenticated: Necessites iniciar sessió o registrar-te abans de continuar.
@@ -95,11 +96,6 @@ ca:
       updated_not_active: La contrasenya s'ha canviat correctament.
     registrations:
       destroyed: Adéu! el compte s'ha cancel·lat amb èxit. Desitgem veure't de nou ben aviat.
-      signed_up: Benvingut! T'has registrat.
-      signed_up_but_inactive: T'has registrat. Tanmateix, no podem iniciar la teva sessió perquè el compte encara no s'ha activat.
-      signed_up_but_locked: T'has registrat. Tanmateix, no podem iniciar la sessió perquè el compte està blocat.
-      signed_up_but_pending: S'ha enviat un missatge amb un enllaç de confirmació a la teva adreça de correu electrònic. Després que hagis fet clic a l'enllaç, revisarem la sol·licitud. Se't notificarà si s'aprova.
-      signed_up_but_unconfirmed: S'ha enviat per correu electrònic un missatge amb un enllaç de confirmació. Fes clic a l'enllaç per a activar el compte. Si us plau, verifica la teva carpeta de correu brossa si no el reps.
       update_needs_confirmation: Has actualitzat el teu compte amb èxit, però necessitem verificar la teva nova adreça de correu. Si us plau comprova el correu i segueixi l'enllaç per confirmar la nova adreça de correu. Si us plau verifica la teva carpeta de correu brossa si no reps aquest correu.
       updated: El teu compte ha estat actualitzat amb èxit.
     sessions:

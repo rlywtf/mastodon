@@ -12,6 +12,7 @@ et:
       last_attempt: Sul on veel üks katse, enne kui konto lukustatakse.
       locked: Konto on lukustatud.
       not_found_in_database: Valed %{authentication_keys} või salasõna.
+      omniauth_user_creation_failure: Sellele identiteedile konto loomine nurjus.
       pending: Sinu konto on siiani läbivaatamisel.
       timeout: Sinu sessioon on aegunud. Jätkamiseks palun sisene uuesti.
       unauthenticated: Pead sisenema või looma konto enne kui jätkad.
@@ -93,11 +94,6 @@ et:
       updated_not_active: Sinu salasõna muutmine õnnestus.
     registrations:
       destroyed: Nägemist! Sinu konto sulgemine õnnestus. Me loodame sind varsti taas näha.
-      signed_up: Tere tulemast! Sinu konto loomine õnnestus.
-      signed_up_but_inactive: Sinu konto loodi edukalt, kuid me ei saanud sind sisse logida, kuna konto pole veel aktiveeritud.
-      signed_up_but_locked: Sinu konto loodi edukalt, kuid me ei saanud sind sisse logida, kuna konto on lukustatud.
-      signed_up_but_pending: Kiri kinnituslingiga saadeti sinu e-postile. Pärast seda, kui oled vajutanud kinnituslingile, vaatame me taotluse üle. Saad teavituse, kui taotlus on vastu võetud.
-      signed_up_but_unconfirmed: Kiri kinnituslingiga saadeti sinu e-postile. Palun järgi linki, et oma konto aktiveerida. Palun kontrolli rämpspostikausta, kui selline kiri ei saabunud.
       update_needs_confirmation: Konto uuendamine õnnestus, kuid e-postiaadress tuleb veel kinnitada. Palun kontrolli oma e-posti ning järgi kirjas olevat kinnituslinki, et e-postiaadress kinnitada. Palun kontrolli rämpspostikausta, kui selline kiri ei saabunud.
       updated: Konto uuendamine õnnestus.
     sessions:

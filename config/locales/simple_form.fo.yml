@@ -3,6 +3,7 @@ fo:
   simple_form:
     hints:
       account:
+        attribution_domains: Eitt á hvørja reglu. Tað verjir fyri skeivum tilsipingum.
         discoverable: Tínir almennu postar og tín vangi kunnu vera drigin fram og viðmæld ymsa staðni í Mastodon og vangin hjá tær kann vera viðmæltur øðrum brúkarum.
         display_name: Títt fulla navn og títt stuttliga navn.
         fields: Heimasíðan hjá tær, fornøvn, aldur ella hvat tú vil.
@@ -39,14 +40,14 @@ fo:
         text: Tú kanst bara kæra eina atsókn eina ferð
       defaults:
         autofollow: Fólk, sum tilmelda seg gjøgnum innbjóðingina, fylgja tær sjálvvirkandi
-        avatar: PNG, GIF ella JPG. Ikki størri enn %{size}. Verður minkað til %{dimensions}px
+        avatar: WEBP, PNG, GIF ella JPG. Í mesta lagi %{size}. Verður minkað til %{dimensions}px
         bot: Tekin til onnur, at kontan í høvuðsheitum ger sjálvvirkandi atgerðir og møguliga ikki verður yvirvakað
         context: Ein ella fleiri kontekstir, har sum filtrið skal brúkast
         current_password: Av trygdarávum vinarliga les inn loyniorðið hjá verandi kontu
         current_username: Fyri at vátta, vinarliga les inn brúkaranavnið á verandi kontu
         digest: Einans sent eftir eitt langt tíðarskeið við óvirkni og einans um tú hevur móttikið persónlig boð meðan tú var burtur
         email: Tú fær sendandi ein váttanarteldupost
-        header: PNG, GIF ella JPG. Ikki størri enn %{size}. Verður minkað til %{dimensions}px
+        header: WEBP, PNG, GIF ella JPG. Í mesta lagi %{size}. Verður minkað til %{dimensions}px
         inbox_url: Avrita URL'in frá forsíðuni hjá reiðlagnum, sum tú vilt brúka
         irreversible: Filtreraðir postar blíva burtur med alla, eisini sjálvt um filtrið seinni verður strikað
         locale: Málið, sum verður brúkt í brúkaramarkamótinum, teldupostum og skumpiboðum
@@ -59,6 +60,7 @@ fo:
         setting_display_media_default: Fjal miðlafílur, sum eru merktar sum viðkvæmar
         setting_display_media_hide_all: Fjal altíð miðlafílur
         setting_display_media_show_all: Vís altíð miðlafílur
+        setting_system_scrollbars_ui: Er einans viðkomandi fyri skriviborðskagar grundaðir á Safari og Chrome
         setting_use_blurhash: Gradientar eru grundaðir á litirnar av fjaldu myndunum, men grugga allar smálutir
         setting_use_pending_items: Fjal tíðarlinjudagføringar aftan fyri eitt klikk heldur enn at skrulla tilføringina sjálvvirkandi
         username: Tú kanst brúka bókstavir, tøl og botnstrikur
@@ -77,13 +79,15 @@ fo:
           warn: Fjal filtreraða innihaldið aftan fyri eina ávaring, sum nevnir heitið á filtrinum
       form_admin_settings:
         activity_api_enabled: Tal av lokalt útgivnum postum, virknum brúkarum og nýggjum skrásetingum býtt vikuliga
-        backups_retention_period: Varðveit gjørd brúkarasøvn í ásetta talið av døgum.
+        app_icon: WEBP, PNG, GIF ella JPG. Býtir vanligu ikonina á fartelefoneindum um við eina ser-ikon.
+        backups_retention_period: Brúkarar hava møguleika at gera trygdaravrit av teirra postum, sum tey kunnu taka niður seinni. Tá hetta er sett til eitt virði størri enn 0, so verða hesi trygdaravrit strikaði av sær sjálvum frá tínar goymslu eftir ásetta talið av døgum.
         bootstrap_timeline_accounts: Hesar kontur verða festar ovast á listanum yvir brúkarar, sum tey nýggju verða mælt til at fylgja.
         closed_registrations_message: Víst tá stongt er fyri tilmeldingum
-        content_cache_retention_period: Postar frá øðrum ambætarum verða strikaðir eftir ásetta talið av døgum, tá hetta er sett til eitt positivt virði. Hetta kann møguliga ikki broytast.
+        content_cache_retention_period: Allir postar frá øðrum ambætarum (íroknað stimbranir og svar) verða strikaði eftir ásetta talið av døgum, óansæð hvussu lokalir brúkarar hava samvirkað við hesar postar. Hetta fevnir eisini um postar, sum lokalir brúkarar hava bókamerkt ella yndismerkt. Privatar umrøður millum brúkarar frá ymiskum ambætarum verða eisini burturmistar og ómøguligar at endurskapa. Brúk av hesi stillingini er einans hugsað til serligar støður og oyðileggur nógv, sum brúkarar vænta av einum vanligum ambætara.
         custom_css: Tú kanst seta títt egna snið upp í net-útgávuni av Mastodon.
+        favicon: WEBP, PNG, GIF ella JPG. Býtir vanligu Mastodon fav-ikonina um við eina ser-ikon.
         mascot: Skúgvar til viks myndprýðingina í framkomna vev-markamótinum.
-        media_cache_retention_period: Miðlafílur, sum eru tiknar niður, verða strikaðar eftir ásetta talið av døgum, tá hetta er sett til eitt positivt virði, og takast niður umaftur eftir ynski.
+        media_cache_retention_period: Miðlafílur frá postum, sum fjarbrúkarar hava gjørt, verða goymdir á tínum ambætara. Tá hetta er sett til eitt virði størri enn 0, so verða miðlafílurnar strikaðar eftir ásetta talið av døgum. Um miðladátur verða umbidnar eftir at tær eru strikaðar, verða tær tiknar innaftur á ambætaran, um keldutilfarið enn er tøkt. Vegna avmarkingar á hvussu ofta undanvísingarkort til leinki spyrja triðjapartsstøð, so verður mælt til at seta hetta virðið til í minsta lagi 14 dagar. Annars verða umbønir um dagføringar av undanvísingarkortum til leinki ikki gjørdar áðrenn hetta.
         peers_api_enabled: Ein listi við navnaøkjum, sum hesin ambætarin er komin framat í fediversinum. Ongar dátur eru tiknar við her um tú er sameind/ur við ein givnan ambætara, einans at tín ambætari veit um hann. Hetta verður brúkt av tænastum, sum gera hagtøl um sameining yvirhøvur.
         profile_directory: Vangaskráin listar allar brúkarar, sum hava valt at kunna uppdagast.
         require_invite_text: Tá tilmeldingar krevja serskilda góðkenning, set so "Hví vil tú vera við?" tekstateigin til at vera kravdan heldur enn valfrían
@@ -116,6 +120,7 @@ fo:
           sign_up_requires_approval: Nýggjar tilmeldingar fara at krevja tína góðkenning
         severity: Vel, hvat skal henda við umbønum frá hesari IP adressuni
       rule:
+        hint: Valfrítt. Gev fleiri smálutir um regluna
         text: Lýs eina reglu ella eitt krav fyri brúkarar á hesum ambætaranum. Ger tað stutt og einfalt
       sessions:
         otp: 'Skriva tvey-faktor koduna frá telefon-appini ella brúka eina av tínum endurgerðskodum:'
@@ -125,9 +130,20 @@ fo:
         show_application: Óansæð, so er altíð møguligt hjá tær at síggja, hvør app postaði tín post.
       tag:
         name: Tú kanst einans broyta millum stórar og smáar stavir, til dømis fyri at gera tað meira lesiligt
+      terms_of_service:
+        changelog: Kunnu vera uppbygdar við Markdown syntaksi.
+        text: Kunnu vera uppbygdar við Markdown syntaksi.
+      terms_of_service_generator:
+        admin_email: Løgfrøðisligar fráboðanir fata um rættarligar mótfráboðanir, úrskurðir, áheitanir um at taka niður og løgfrøðisligar áheitanir.
+        arbitration_address: Kann vera tann sami sum fysiski bústaðurin omanfyri ella "N/A", um teldupostur verður brúktur
+        arbitration_website: Kann vera ein vevformularur ella "N/A", um teldupostur verður brúktur
+        dmca_address: Fyristøðufólk og -feløg í USA brúka bústaðin, ið er skrásettur í DMCA Designated Agent Directory. Ein postsmoguskráseting er tøk, um biðið verður um hana beinleiðis. Brúka DMCA Designated Agent Post Office Box Waiver Request fyri at senda teldubræv til Copyright Office og greið frá, at tú er ein kjakleiðari, sum virkar heimanifrá, og at tú er bangin fyri hevnd ella afturløning fyri tí, tú ger, og at tú hevur tørv á at brúka eina postsmogu fyri at fjala heimabústaðin fyri almenninginum.
+        dmca_email: Kann vera sami teldupoststaður, sum er brúktur til "Teldupoststaður fyri løgfrøðisligar fráboðanir" omanfyri
+        domain: Makaleys eyðmerking av nettænastuni, sum tú veitir.
+        jurisdiction: Lista landið, har sum tann, ið rindar rokningarnar, livir. Er tað eitt felag ella ein onnur eind, lista landið, har tað er skrásett, umframt býin, økið, umveldið ella statin, alt eftir hvat er hóskandi.
       user:
         chosen_languages: Tá hetta er valt, verða einans postar í valdum málum vístir á almennum tíðarlinjum
-        role: Leikluturin stýrir, hvørji loyvir brúkarin hevur
+        role: Leikluturin stýrir hvørji rættindi, brúkarin hevur.
       user_role:
         color: Litur, sum leikluturin hevur í øllum brúkaramarkamótinum, sum RGB og upplýst sum sekstandatal
         highlighted: Hetta ger, at leikluturin er alment sjónligur
@@ -140,6 +156,7 @@ fo:
         url: Hvar hendingar verða sendar til
     labels:
       account:
+        attribution_domains: Heimasíður, sum hava loyvi at sipa til tín
         discoverable: Framheva vanga og postar í uppdagingar-algoritmum
         fields:
           name: Spjaldur
@@ -208,6 +225,7 @@ fo:
         setting_default_privacy: Hvussu privatir eru postar?
         setting_default_sensitive: Merk altíð miðlafílur sum viðkvæmar
         setting_delete_modal: Vís váttanarmynd, áðrenn postar verða strikaðir
+        setting_disable_hover_cards: Ger undanvísing, tá músin verður flutt yvir vangan, óvirkna
         setting_disable_swiping: Ger sveipurørslur óvirknar
         setting_display_media: Vístir miðlar
         setting_display_media_default: Sjálvvirði
@@ -217,6 +235,7 @@ fo:
         setting_hide_network: Fjal sosiala grafin hjá tær
         setting_reduce_motion: Minka um rørslu í teknimyndum
         setting_system_font_ui: Brúka vanliga skriftaslagið hjá skipanini
+        setting_system_scrollbars_ui: Brúka vanliga skrullibjálkan hjá skipanini
         setting_theme: Uppsetingareyðkenni
         setting_trends: Vís dagsins rák
         setting_unfollow_modal: Vís váttanarmynd, áðrenn tú gevst at fylgja onkrum
@@ -239,11 +258,13 @@ fo:
           warn: Fjal við eini ávaring
       form_admin_settings:
         activity_api_enabled: Útgev samantald hagtøl um brúkaravirksemi í API'num
+        app_icon: App ikon
         backups_retention_period: Hvussu leingi verða brúkarasøvn goymd
         bootstrap_timeline_accounts: Mæl altíð nýggjum brúkarum at fylgja hesar kontur
         closed_registrations_message: Serskild boð, tá tað ikki er møguligt at tilmelda seg
-        content_cache_retention_period: Tíðarskeið, har innihaldgoymslan verður varðveitt
+        content_cache_retention_period: Tíðarskeið fyri varðveiðslu av fjartilfari
         custom_css: Serskilt CSS
+        favicon: Favikon
         mascot: Serskildur maskottur (arvur)
         media_cache_retention_period: Tíðarskeið, har miðlagoymslur verða varðveittar
         peers_api_enabled: Kunnger lista við uppdagaðum ambætarum í API'num
@@ -299,6 +320,7 @@ fo:
           patch: Gev fráboðan um feilrættingardagføringar
         trending_tag: Broytt rák skal kannast
       rule:
+        hint: Fleiri upplýsingar
         text: Regla
       settings:
         indexable: Lat vangasíðu vera tøka í leitimaskinum
@@ -307,7 +329,18 @@ fo:
         listable: Loyva hesum tvíkrossið, at verða vístur í leitingum og uppskotum
         name: Tvíkrossur
         trendable: Loyv hesum frámerki at síggjast undir rákum
-        usable: Loyva uppsløgum at brúka hendan tvíkross
+        usable: Loyv postum at brúka hetta frámerki lokalt
+      terms_of_service:
+        changelog: Hvat er broytt?
+        text: Tænastutreytir
+      terms_of_service_generator:
+        admin_email: Teldupoststaður fyri løgfrøðisligar fráboðanir
+        arbitration_address: Fysisk adressa fyri gerðarrættarfráboðanir
+        arbitration_website: Heimasíða har gerðarrættarfráboðanir kunnu innlatast
+        dmca_address: Fysiskur bústaður fyri DMCA/copyright fráboðanir
+        dmca_email: Teldubústaður fyri DMCA/copyright fráboðanir
+        domain: Navnaøki
+        jurisdiction: Løgdømi
       user:
         role: Leiklutur
         time_zone: Tíðarsona

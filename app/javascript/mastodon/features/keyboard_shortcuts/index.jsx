@@ -67,6 +67,10 @@ class KeyboardShortcuts extends ImmutablePureComponent {
                 <td><FormattedMessage id='keyboard_shortcuts.enter' defaultMessage='to open status' /></td>
               </tr>
               <tr>
+                <td><kbd>t</kbd></td>
+                <td><FormattedMessage id='keyboard_shortcuts.translate' defaultMessage='to translate a post' /></td>
+              </tr>
+              <tr>
                 <td><kbd>e</kbd></td>
                 <td><FormattedMessage id='keyboard_shortcuts.open_media' defaultMessage='to open media' /></td>
               </tr>
@@ -107,7 +111,7 @@ class KeyboardShortcuts extends ImmutablePureComponent {
                 <td><FormattedMessage id='keyboard_shortcuts.back' defaultMessage='to navigate back' /></td>
               </tr>
               <tr>
-                <td><kbd>s</kbd></td>
+                <td><kbd>s</kbd>, <kbd>/</kbd></td>
                 <td><FormattedMessage id='keyboard_shortcuts.search' defaultMessage='to focus search' /></td>
               </tr>
               <tr>
